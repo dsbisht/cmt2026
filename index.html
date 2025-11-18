@@ -50,7 +50,7 @@
     <header class="bg-white shadow-lg sticky top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold text-nih-dark">
-                NIH Training
+                 
             </h1>
             <nav class="space-x-4">
                 <a href="#about" class="text-gray-600 hover:text-nih-blue transition duration-150">About</a>
@@ -61,11 +61,38 @@
         </div>
     </header>
 
+
+    <!-- 🔔 REGISTRATION DEADLINE MARQUEE -->
+    <div class="relative overflow-hidden bg-gradient-to-r from-red-600 via-rose-600 to-red-700 py-3 shadow-lg">
+      <div class="animate-marquee whitespace-nowrap">
+        <span class="mx-10 text-white font-extrabold text-lg tracking-wide drop-shadow-md animate-pulse">
+          ⚠️ LAST DATE OF REGISTRATION IS <span class="underline decoration-yellow-300">30 NOV 2025</span> — APPLY NOW! ⚠️
+        </span>
+        <span class="mx-10 text-white font-extrabold text-lg tracking-wide drop-shadow-md animate-pulse">
+          🚨 REGISTRATION CLOSES ON <span class="underline decoration-yellow-300">30 NOV 2025</span> — LIMITED SEATS! 🚨
+        </span>
+      </div>
+    </div>
+
+    <!-- ⭐ Custom Animation -->
+    <style>
+      @keyframes marquee {
+        0%   { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+      }
+      .animate-marquee {
+        display: inline-block;
+        min-width: 100%;
+        animation: marquee 14s linear infinite;
+      }
+    </style>
+
+
     <!-- Main Hero Section -->
     <section class="bg-nih-light py-16 sm:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <!-- Course Title -->
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-nih-blue mb-3">
+            <h2 class="text-m font-semibold uppercase tracking-wider text-nih-blue mb-3">
                 One Week Advance Training Course
             </h2>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-nih-dark mb-6">
@@ -103,8 +130,10 @@
                 Secure Your Spot (Limited to 25)
             </a>
             <p class="mt-2 text-sm text-gray-600">Complimentary boarding & lodging provided at NIH Guest House.</p>
+
         </div>
     </section>
+
 
     <!-- About NIH Section -->
     <section id="about" class="py-16 bg-white">
@@ -113,7 +142,7 @@
             <div class="grid md:grid-cols-2 gap-10 items-center">
                 <div class="order-2 md:order-1">
                     <p class="text-gray-700 mb-4">
-                        The <a href="https://nihroorkee.gov.in/"><b>National Institute of Hydrology (NIH)</b></a> is a premier research & development organization under the <a href="https://www.jalshakti-dowr.gov.in/"> <b>Department of Water Resources, River Development & Ganga Rejuvenation</b></a> of the <a href="https://jalshakti.gov.in/"> <b>Ministry of Jal Shakti, Government of India, </b></a> established in 1978, with its headquarters at Roorkee. The main objectives of NIH are to undertake, aid, promote and coordinate systematic and scientific work in all aspects of hydrology. 
+                        The <a href="https://nihroorkee.gov.in/" class="hover:text-blue-400 hover:underline transition"><b>National Institute of Hydrology (NIH)</b></a> is a premier research & development organization under the <a href="https://www.jalshakti-dowr.gov.in/" class="hover:text-blue-400 hover:underline transition"> <b>Department of Water Resources, River Development & Ganga Rejuvenation</b></a> of the <a href="https://jalshakti.gov.in/" class="hover:text-blue-400 hover:underline transition"> <b>Ministry of Jal Shakti, Government of India, </b></a> established in 1978, with its headquarters at Roorkee. The main objectives of NIH are to undertake, aid, promote and coordinate systematic and scientific work in all aspects of hydrology. 
 
                     </p>
                     <p class="text-gray-700 mb-4">
@@ -128,6 +157,26 @@
             </div>
         </div>
     </section>
+
+<!-- About NWM -->
+<section class="max-w-7xl mx-auto py-8 px-6 lg:px-8 bg-white">
+    <div class="bg-gray-100 rounded-xl p-6 md:p-10 shadow-inner border-t-4 border-blue-600">
+        <h2 class="text-3xl font-extrabold text-blue-800 mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            Sponsor Spotlight: The National Water Mission (NWM)
+        </h2>
+        
+        <p class="text-gray-600 mb-6">
+            The <a href="https://www.jalshakti-dowr.gov.in/department/our-wings/details/national-water-mission-gMxUTNtQWa/" target="_blank" class="text-sm font-semibold text-blue-600 hover:text-blue-800 transition duration-150"><b>National Water Mission (NWM)</b></a> is one of the eight core missions launched under the <a href ="https://dst.gov.in/climate-change-programme" class="hover:text-blue-400 hover:underline transition"><b>National Action Plan on Climate Change (NAPCC)</b></a>, spearheaded by the Government of India. Its fundamental goal is to safeguard India’s water resources against the increasing impacts of climate change.
+        </p>
+        
+        <p class="text-gray-600 mb-6">
+            The Mission operates with five core objectives, including increasing water use efficiency by 20% and promoting mass awareness. Our training program is proudly sponsored by the NWM, directly aligning with their goal of Human Resource Development and Capacity Building to equip professionals with the skills needed for sustainable water management in a changing climate.
+        </p>
+    </div>
+</section>
 
 <!-- Key Topics Section -->
     <section id="topics" class="py-16 bg-nih-light">
@@ -287,69 +336,132 @@
           <a href="https://1drv.ms/b/c/25347ac4eb206990/EcSDppa7Pg9Gk_hvwLR5LnoB7L3YGLgwawqYL-rpdNn9Jg?e=EXffAf" target="_blank" download
              style="background-color:#007bff; color:white; padding:10px 20px; 
                     border-radius:6px; text-decoration:none; font-weight:bold;">
-             Download NOC Certificate Format
+             Download NOC Format
           </a>
         </div>
 
 
 
-
     </section>
 
-    <!-- Footer & Contact Information -->
-    <footer class="bg-gray-800 text-white py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-<!--                 <h4 class="text-l font-bold mb-4">Organized By</h4>
-                <p class="text-gray-400">
-                    Centre for Cryosphere and Climate Change Studies<br>
-                    National Institute of Hydrology, Roorkee <br>
-                </p> -->
-                <h4 class="text-l font-bold mb-4">Patron</h4>
-                <p class="text-gray-400">
-                    <b>Dr. YRS Rao</b><br>
-                    Director, National Institute of Hydrology<br><br>
-                </p>
+<!-- Footer & Contact Information -->
+<footer class="bg-gray-900 text-gray-200 pt-12 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
-                <h4 class="text-l font-bold">Convener</h4>
-                <p class="text-gray-400 mt-4">
-                    <b>Dr. Surjeet Singh</b><br>
-                    Scientist 'G' & Head, Centre for Cryosphere and Climate Change Studies<br>
-                    National Institute of Hydrology <br>
-                </p>
+    <!-- Organized / Sponsored Strip -->
+    <section class="bg-gray-800/70 border border-gray-700 rounded-xl px-6 py-6 text-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            </div>
-            <div>
-                <h4 class="text-l font-bold mb-4">Training Coordinators</h4>
-                <p class="text-gray-400">
-                    <b>Dr. Kuldeep Sharma</b> <br> 
-                    Scientist 'C', National Institute of Hydrology <br>
-                    Email: kuldeep.nihr@gov.in<br>
-                    Phone: 01332 249251
-                </p>
-                <p class="text-gray-400 mt-4">
-                    <b>Dr. Deepak Singh Bisht</b> <br>
-                    Scientist 'C', National Institute of Hydrology <br>
-                    Email: dsbisht.nihr@gov.in<br>
-                    Phone: 01332 249234
-                </p>
-
-            </div>
-            <div>
-                <h4 class="text-l font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2">
-                    <li><a href="#about" class="text-gray-400 hover:text-nih-blue">About NIH</a></li>
-                    <li><a href="#topics" class="text-gray-400 hover:text-nih-blue">Key Topics</a></li>
-                    <li><a href="#schedule" class="text-gray-400 hover:text-nih-blue">Full Schedule</a></li>
-                </ul>
-            </div>
+        <!-- Organized By -->
+        <div>
+          <h3 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-2">
+            Organized by
+          </h3>
+          <p class="text-s leading-snug text-gray-100">
+            Centre for Cryosphere and Climate Change Studies (C4S)<br>
+            National Institute of Hydrology (NIH), Roorkee
+          </p>
         </div>
-        <div class="mt-10 pt-6 border-t border-gray-700 text-center">
-            <p class="text-sm text-gray-500">
-                &copy; 2026. All rights reserved.
-            </p>
+
+        <!-- Sponsored By -->
+        <div>
+          <h3 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-2">
+            Sponsored by
+          </h3>
+          <p class="text-s leading-snug text-gray-100">
+            National Water Mission (NWM), New Delhi
+          </p>
         </div>
-    </footer>
+
+      </div>
+
+      <!-- Comes under -->
+      <p class="text-s text-gray-400 mt-4">
+        Department of Water Resources, River Development &amp; Ganga Rejuvenation<br>
+        Ministry of Jal Shakti, Government of India
+      </p>
+    </section>
+
+    <!-- Main Footer Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- Patron & Convener -->
+      <div>
+        <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-3">
+          Patron
+        </h4>
+        <p class="text-sm text-gray-200 leading-relaxed">
+          <span class="font-semibold">Dr. Y.R.S. Rao</span><br>
+          Director, National Institute of Hydrology
+        </p>
+
+        <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mt-6 mb-3">
+          Convener
+        </h4>
+        <p class="text-sm text-gray-200 leading-relaxed">
+          <span class="font-semibold">Dr. Surjeet Singh</span><br>
+          Scientist 'G' &amp; Head, C4S<br>
+          National Institute of Hydrology
+        </p>
+      </div>
+
+      <!-- Training Coordinators -->
+      <div>
+        <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-3">
+          Training Coordinators
+        </h4>
+
+        <div class="space-y-5 text-sm text-gray-200">
+          <p class="leading-relaxed">
+            <span class="font-semibold">Dr. Kuldeep Sharma</span><br>
+            Scientist 'C', C4S, National Institute of Hydrology<br>
+            <span class="text-gray-400">Email:</span> kuldeep.nihr@gov.in<br>
+            <span class="text-gray-400">Phone:</span> 01332&nbsp;249251
+          </p>
+
+          <p class="leading-relaxed">
+            <span class="font-semibold">Dr. Deepak Singh Bisht</span><br>
+            Scientist 'C', C4S, National Institute of Hydrology<br>
+            <span class="text-gray-400">Email:</span> dsbisht.nihr@gov.in<br>
+            <span class="text-gray-400">Phone:</span> 01332&nbsp;249234
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-3">
+          Quick Links
+        </h4>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="#about" class="text-gray-300 hover:text-blue-400 hover:underline transition">
+              About NIH
+            </a>
+          </li>
+          <li>
+            <a href="#topics" class="text-gray-300 hover:text-blue-400 hover:underline transition">
+              Key Topics
+            </a>
+          </li>
+          <li>
+            <a href="#schedule" class="text-gray-300 hover:text-blue-400 hover:underline transition">
+              Full Schedule
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-6 border-t border-gray-800 text-center">
+      <p class="text-xs text-gray-500">
+        &copy; 2026 National Institute of Hydrology, Roorkee. All rights reserved.
+      </p>
+    </div>
+
+  </div>
+</footer>
 
 </body>
 </html>
