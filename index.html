@@ -1,501 +1,626 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climate Modeller's Toolkit: Training Course</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configure Tailwind to use Inter font and custom colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'nih-blue': '#1a73e8', // A strong, professional blue
-                        'nih-dark': '#0f4c81', // A dark navy blue for text/headers
-                        'nih-light': '#e6f0ff', // A light blue for backgrounds
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Custom styles for professional polish */
-        .card-shadow {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .text-gradient {
-            background-image: linear-gradient(to right, #1a73e8, #0f4c81);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .schedule-table th, .schedule-table td {
-            padding: 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .schedule-table th {
-            background-color: #f7fafc;
-            font-weight: 600;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 font-sans">
-
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-lg sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Climate Modeller's Toolkit: Training Course</title>
+      <!-- Load Tailwind CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <!-- Configure Tailwind to use Inter font and custom colors -->
+      <script>
+         tailwind.config = {
+             theme: {
+                 extend: {
+                     colors: {
+                         'nih-blue': '#1a73e8', // A strong, professional blue
+                         'nih-dark': '#0f4c81', // A dark navy blue for text/headers
+                         'nih-light': '#e6f0ff', // A light blue for backgrounds
+                     },
+                     fontFamily: {
+                         sans: ['Inter', 'sans-serif'],
+                     },
+                 }
+             }
+         }
+      </script>
+      <style>
+         /* Custom styles for professional polish */
+         .card-shadow {
+         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+         }
+         .text-gradient {
+         background-image: linear-gradient(to right, #1a73e8, #0f4c81);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         }
+         .schedule-table th, .schedule-table td {
+         padding: 0.75rem;
+         text-align: left;
+         border-bottom: 1px solid #e2e8f0;
+         }
+         .schedule-table th {
+         background-color: #f7fafc;
+         font-weight: 600;
+         }
+      </style>
+   </head>
+   <body class="bg-gray-50 font-sans">
+      <!-- Header & Navigation -->
+      <header class="bg-white shadow-lg sticky top-0 z-10">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold text-nih-dark">
-                 
             </h1>
             <nav class="space-x-4">
-                <a href="#about" class="text-gray-600 hover:text-nih-blue transition duration-150">About</a>
-                <a href="#topics" class="text-gray-600 hover:text-nih-blue transition duration-150">Topics</a>
-                <a href="#schedule" class="text-gray-600 hover:text-nih-blue transition duration-150">Schedule</a>
-                <a href="https://1drv.ms/b/c/25347ac4eb206990/EdAjI6ySf5hHqCWRH8_mw8ABGjvcy9Py7jZDgFBJLzRBmw?e=UHfbu4" target="_blank" class="text-white bg-nih-blue hover:bg-nih-dark px-4 py-2 rounded-lg font-medium transition duration-150 shadow-md" download> Brouchre</a>
-                <a href="#register" class="text-white bg-nih-blue hover:bg-nih-dark px-4 py-2 rounded-lg font-medium transition duration-150 shadow-md">Register Now</a>
-                <a href="/cmt2026/pages/noc.html" target="_blank" class="px-5 py-2 rounded-xl font-semibold bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 text-white shadow-[0_0_12px_rgba(255,200,0,0.8)] hover:shadow-[0_0_20px_rgba(255,200,0,1)]">
-                 NOTICE</a>
-                <a href="/cmt2026/pages/results.html" target="_blank" class="px-5 py-2 rounded-xl font-semibold bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 text-white shadow-[0_0_12px_rgba(255,200,0,0.8)] hover:shadow-[0_0_20px_rgba(255,200,0,1)]">
-                 RESULT</a>
+               <a href="#about" class="text-gray-600 hover:text-nih-blue transition duration-150">About</a>
+               <a href="#topics" class="text-gray-600 hover:text-nih-blue transition duration-150">Topics</a>
+               <a href="#schedule" class="text-gray-600 hover:text-nih-blue transition duration-150">Schedule</a>
+               <a href="https://1drv.ms/b/c/25347ac4eb206990/EdAjI6ySf5hHqCWRH8_mw8ABGjvcy9Py7jZDgFBJLzRBmw?e=UHfbu4" target="_blank" class="text-white bg-nih-blue hover:bg-nih-dark px-4 py-2 rounded-lg font-medium transition duration-150 shadow-md" download> Brouchre</a>
+               <a href="#register" class="text-white bg-nih-blue hover:bg-nih-dark px-4 py-2 rounded-lg font-medium transition duration-150 shadow-md">Register Now</a>
+               <a href="/cmt2026/pages/noc.html" target="_blank" class="px-5 py-2 rounded-xl font-semibold bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 text-white shadow-[0_0_12px_rgba(255,200,0,0.8)] hover:shadow-[0_0_20px_rgba(255,200,0,1)]">
+               NOTICE</a>
+               <a href="/cmt2026/pages/results.html" target="_blank" class="px-5 py-2 rounded-xl font-semibold bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 text-white shadow-[0_0_12px_rgba(255,200,0,0.8)] hover:shadow-[0_0_20px_rgba(255,200,0,1)]">
+               RESULT</a>
             </nav>
-        </div>
-    </header>
-
-
-    <!-- 🔔 REGISTRATION DEADLINE MARQUEE -->
-    <div class="relative overflow-hidden bg-gradient-to-r from-red-600 via-rose-600 to-red-700 py-3 shadow-lg">
-      <div class="animate-marquee whitespace-nowrap">
-        <span class="mx-10 text-white font-extrabold text-lg tracking-wide drop-shadow-md animate-pulse">
-          ⚠️ LAST DATE OF REGISTRATION IS <span class="underline decoration-yellow-300">30 NOV 2025</span> — APPLY NOW! ⚠️
-        </span>
-        <span class="mx-10 text-white font-extrabold text-lg tracking-wide drop-shadow-md animate-pulse">
-          🚨 REGISTRATION CLOSES ON <span class="underline decoration-yellow-300">30 NOV 2025</span> — LIMITED SEATS! 🚨
-        </span>
+         </div>
+      </header>
+      <!-- 🔔 REGISTRATION DEADLINE MARQUEE -->
+      <div class="relative overflow-hidden bg-gradient-to-r from-red-600 via-rose-600 to-red-700 py-3 shadow-lg">
+         <div class="animate-marquee whitespace-nowrap">
+            <span class="mx-10 text-white font-extrabold text-lg tracking-wide drop-shadow-md animate-pulse">
+            ⚠️ LAST DATE OF REGISTRATION IS <span class="underline decoration-yellow-300">30 NOV 2025</span> — APPLY NOW! ⚠️
+            </span>
+            <span class="mx-10 text-white font-extrabold text-lg tracking-wide drop-shadow-md animate-pulse">
+            🚨 REGISTRATION CLOSES ON <span class="underline decoration-yellow-300">30 NOV 2025</span> — LIMITED SEATS! 🚨
+            </span>
+         </div>
       </div>
-    </div>
-
-    <!-- ⭐ Custom Animation -->
-    <style>
-      @keyframes marquee {
-        0%   { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-      }
-      .animate-marquee {
-        display: inline-block;
-        min-width: 100%;
-        animation: marquee 14s linear infinite;
-      }
-    </style>
-
-
-    <!-- Main Hero Section -->
-    <section class="bg-nih-light py-16 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- ⭐ Custom Animation -->
+      <style>
+         @keyframes marquee {
+         0%   { transform: translateX(100%); }
+         100% { transform: translateX(-100%); }
+         }
+         .animate-marquee {
+         display: inline-block;
+         min-width: 100%;
+         animation: marquee 14s linear infinite;
+         }
+      </style>
+      <!-- Main Hero Section -->
+      <section class="bg-nih-light py-16 sm:py-24">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <!-- Course Title -->
             <h2 class="text-m font-semibold uppercase tracking-wider text-nih-blue mb-3">
-                One Week Advance Training Course
+               One Week Advance Training Course
             </h2>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-nih-dark mb-6">
-                Climate Modeller's Toolkit for <span class="text-gradient">Water Resource Management</span>
+               Climate Modeller's Toolkit for <span class="text-gradient">Water Resource Management</span>
             </h1>
             <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-700 sm:mt-4">
-                Master <b>Data, Models & Workflows</b> with hands-on training from experts at the National Institute of Hydrology (NIH), Roorkee.
+               Master <b>Data, Models & Workflows</b> with hands-on training from experts at the National Institute of Hydrology (NIH), Roorkee.
             </p>
-
             <!-- Key Info Box -->
             <div class="mt-10 p-6 bg-white rounded-xl inline-block card-shadow">
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 text-gray-800 font-medium">
-                    <!-- Date -->
-                    <div class="flex items-center space-x-2">
-                        <!-- Icon: Calendar -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-nih-blue"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <span><span class="font-bold">Date:</span> 02 - 06 February 2026</span>
-                    </div>
-                    <!-- Venue -->
-                    <div class="flex items-center space-x-2">
-                        <!-- Icon: Map Pin -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-nih-blue"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        <span><span class="font-bold">Venue:</span> NIH, Roorkee</span>
-                    </div>
-                    <!-- Cost -->
-                    <div class="flex items-center space-x-2">
-                        <!-- Icon: Dollar Sign -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-nih-blue"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                        <span><span class="font-bold">Registration Fee:</span> FREE</span>
-                    </div>
-                </div>
+               <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 text-gray-800 font-medium">
+                  <!-- Date -->
+                  <div class="flex items-center space-x-2">
+                     <!-- Icon: Calendar -->
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-nih-blue">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                     </svg>
+                     <span><span class="font-bold">Date:</span> 02 - 06 February 2026</span>
+                  </div>
+                  <!-- Venue -->
+                  <div class="flex items-center space-x-2">
+                     <!-- Icon: Map Pin -->
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-nih-blue">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                     </svg>
+                     <span><span class="font-bold">Venue:</span> NIH, Roorkee</span>
+                  </div>
+                  <!-- Cost -->
+                  <div class="flex items-center space-x-2">
+                     <!-- Icon: Dollar Sign -->
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-nih-blue">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                     </svg>
+                     <span><span class="font-bold">Registration Fee:</span> FREE</span>
+                  </div>
+               </div>
             </div>
-
             <a href="#register" class="mt-8 inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-nih-blue hover:bg-nih-dark md:py-4 md:text-lg md:px-10 shadow-xl transition duration-300 transform hover:scale-105">
-                Secure Your Spot (Limited to 25)
+            Secure Your Spot (Limited to 25)
             </a>
             <p class="mt-2 text-sm text-gray-600">Complimentary boarding & lodging provided at NIH Guest House.</p>
-
-        </div>
-    </section>
-
-
-    <!-- About NIH Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         </div>
+      </section>
+      <!-- About NIH Section -->
+      <section id="about" class="py-16 bg-white">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-nih-dark mb-8 text-center sm:text-left">About us</h2>
             <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div class="order-2 md:order-1">
-                    <p class="text-gray-700 mb-4">
-                        The <a href="https://nihroorkee.gov.in/" class="hover:text-blue-400 hover:underline transition"><b>National Institute of Hydrology (NIH)</b></a> is a premier research & development organization under the <a href="https://www.jalshakti-dowr.gov.in/" class="hover:text-blue-400 hover:underline transition"> <b>Department of Water Resources, River Development & Ganga Rejuvenation</b></a> of the <a href="https://jalshakti.gov.in/" class="hover:text-blue-400 hover:underline transition"> <b>Ministry of Jal Shakti, Government of India, </b></a> established in 1978, with its headquarters at Roorkee. The main objectives of NIH are to undertake, aid, promote and coordinate systematic and scientific work in all aspects of hydrology. 
-
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        The Institute was designated as a Scientific and Technological (S&T) organization in 1987 and is ISO 9001:2008 certified. Recognized as a Center of Excellence, NIH undertakes advanced research in hydrology and water resources, with a strong focus on technology transfer and strategic, demand-driven, user-defined initiatives. Its headquarters are located in Roorkee, with seven Regional Centres established across the country in Bhopal, Belgaum, Guwahati, Jammu, Jodhpur, Kakinada, and Patna.
-                    </p>
-                    
-                </div>
-                <!-- Placeholder Image for NIH Building - Replace with actual image URL if available -->
-                <div class="order-1 md:order-2 rounded-xl overflow-hidden card-shadow">
-                    <img src="assets/NIH_Image.jpg" alt="NIH Roorkee Building Placeholder" class="w-full h-auto object-cover">
-                </div>
+               <div class="order-2 md:order-1">
+                  <p class="text-gray-700 mb-4">
+                     The <a href="https://nihroorkee.gov.in/" class="hover:text-blue-400 hover:underline transition"><b>National Institute of Hydrology (NIH)</b></a> is a premier research & development organization under the <a href="https://www.jalshakti-dowr.gov.in/" class="hover:text-blue-400 hover:underline transition"> <b>Department of Water Resources, River Development & Ganga Rejuvenation</b></a> of the <a href="https://jalshakti.gov.in/" class="hover:text-blue-400 hover:underline transition"> <b>Ministry of Jal Shakti, Government of India, </b></a> established in 1978, with its headquarters at Roorkee. The main objectives of NIH are to undertake, aid, promote and coordinate systematic and scientific work in all aspects of hydrology. 
+                  </p>
+                  <p class="text-gray-700 mb-4">
+                     The Institute was designated as a Scientific and Technological (S&T) organization in 1987 and is ISO 9001:2008 certified. Recognized as a Center of Excellence, NIH undertakes advanced research in hydrology and water resources, with a strong focus on technology transfer and strategic, demand-driven, user-defined initiatives. Its headquarters are located in Roorkee, with seven Regional Centres established across the country in Bhopal, Belgaum, Guwahati, Jammu, Jodhpur, Kakinada, and Patna.
+                  </p>
+               </div>
+               <!-- Placeholder Image for NIH Building - Replace with actual image URL if available -->
+               <div class="order-1 md:order-2 rounded-xl overflow-hidden card-shadow">
+                  <img src="assets/NIH_Image.jpg" alt="NIH Roorkee Building Placeholder" class="w-full h-auto object-cover">
+               </div>
             </div>
-        </div>
-    </section>
-
-<!-- About NWM -->
-<section class="max-w-7xl mx-auto py-8 px-6 lg:px-8 bg-white">
-    <div class="bg-gray-100 rounded-xl p-6 md:p-10 shadow-inner border-t-4 border-blue-600">
-        <h2 class="text-3xl font-extrabold text-blue-800 mb-4 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-            Sponsor Spotlight: The National Water Mission (NWM)
-        </h2>
-        
-        <p class="text-gray-600 mb-6">
-            The <a href="https://www.jalshakti-dowr.gov.in/department/our-wings/details/national-water-mission-gMxUTNtQWa/" target="_blank" class="text-sm font-semibold text-blue-600 hover:text-blue-800 transition duration-150"><b>National Water Mission (NWM)</b></a> is one of the eight core missions launched under the <a href ="https://dst.gov.in/climate-change-programme" class="hover:text-blue-400 hover:underline transition"><b>National Action Plan on Climate Change (NAPCC)</b></a>, spearheaded by the Government of India. Its fundamental goal is to safeguard India’s water resources against the increasing impacts of climate change.
-        </p>
-        
-        <p class="text-gray-600 mb-6">
-            The Mission operates with five core objectives, including increasing water use efficiency by 20% and promoting mass awareness. Our training program is proudly sponsored by the NWM, directly aligning with their goal of Human Resource Development and Capacity Building to equip professionals with the skills needed for sustainable water management in a changing climate.
-        </p>
-    </div>
-</section>
-
-<!-- Key Topics Section -->
-    <section id="topics" class="py-16 bg-nih-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         </div>
+      </section>
+      <!-- About NWM -->
+      <section class="max-w-7xl mx-auto py-8 px-6 lg:px-8 bg-white">
+         <div class="bg-gray-100 rounded-xl p-6 md:p-10 shadow-inner border-t-4 border-blue-600">
+            <h2 class="text-3xl font-extrabold text-blue-800 mb-4 flex items-center">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+               </svg>
+               Sponsor Spotlight: The National Water Mission (NWM)
+            </h2>
+            <p class="text-gray-600 mb-6">
+               The <a href="https://www.jalshakti-dowr.gov.in/department/our-wings/details/national-water-mission-gMxUTNtQWa/" target="_blank" class="text-sm font-semibold text-blue-600 hover:text-blue-800 transition duration-150"><b>National Water Mission (NWM)</b></a> is one of the eight core missions launched under the <a href ="https://dst.gov.in/climate-change-programme" class="hover:text-blue-400 hover:underline transition"><b>National Action Plan on Climate Change (NAPCC)</b></a>, spearheaded by the Government of India. Its fundamental goal is to safeguard India’s water resources against the increasing impacts of climate change.
+            </p>
+            <p class="text-gray-600 mb-6">
+               The Mission operates with five core objectives, including increasing water use efficiency by 20% and promoting mass awareness. Our training program is proudly sponsored by the NWM, directly aligning with their goal of Human Resource Development and Capacity Building to equip professionals with the skills needed for sustainable water management in a changing climate.
+            </p>
+         </div>
+      </section>
+      <!-- Key Topics Section -->
+      <section id="topics" class="py-16 bg-nih-light">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-nih-dark mb-10 text-center">What You Will Master</h2>
-
             <div class="grid md:grid-cols-4 gap-6">
-                <!-- Card 1: Climate Science Fundamentals -->
-                <div class="bg-white p-6 rounded-xl card-shadow flex flex-col items-start hover:shadow-xl transition duration-300">
-                    <h3 class="text-xl font-bold text-nih-dark mb-3">Climate Fundamentals</h3>
-                    <ul class="text-gray-600 space-y-2 text-sm list-disc pl-5">
-                        <li>Climate change impacts on water resources</li>
-                        <li><b>CMIP6, GCMs, RCMs,</b> and <b>CORDEX</b> frameworks</li>
-                        <li>Reanalysis Data (IMDAA, ERA5, MERRA-2)</li>
-                    </ul>
-                </div>
-
-                <!-- Card 2: Hands-on Data Tools -->
-                <div class="bg-white p-6 rounded-xl card-shadow flex flex-col items-start hover:shadow-xl transition duration-300">
-                    <h3 class="text-xl font-bold text-nih-dark mb-3">Hands-on Tutorial</h3>
-                    <ul class="text-gray-600 space-y-2 text-sm list-disc pl-5">
-                        <li>Pre-processing data with <b>CDO</b></li>
-                        <li>Visualize climate data using <b>GrADS</b></li>
-                        <li>Data handling with <b>NumPy & Pandas</b></li>
-                        <li>NetCDF Data processing with <b>Xarray</b></li>
-                    </ul>
-                </div>
-
-                <!-- Card 3: Downscaling & ML -->
-                <div class="bg-white p-6 rounded-xl card-shadow flex flex-col items-start hover:shadow-xl transition duration-300">
-                    <h3 class="text-xl font-bold text-nih-dark mb-3">Advanced Topics</h3>
-                    <ul class="text-gray-600 space-y-2 text-sm list-disc pl-5">
-                        <li>Dynamical & Statistical Downscaling methods</li>
-                        <li><b>AI & ML</b> in Climate Science applications (Part 1 & 2)</li>
-                        <li>Climate Data Services of <b>IMD</b></li>
-                    </ul>
-                </div>
-
-                <!-- Card 4: Practical Application -->
-                <div class="bg-white p-6 rounded-xl card-shadow flex flex-col items-start hover:shadow-xl transition duration-300">
-                    <h3 class="text-xl font-bold text-nih-dark mb-3">DIY & Certification</h3>
-                    <ul class="text-gray-600 space-y-2 text-sm list-disc pl-5">
-                        <li>Build your own climate data workflow (<b>DIY Project</b>)</li>
-                        <li>Project Presentation and Peer Learning</li>
-                        <li>Official Certificate of Participation</li>
-                        <li>Complimentary <b>Field Visit</b></li>
-                    </ul>
-                </div>
+               <!-- Card 1: Climate Science Fundamentals -->
+               <div class="bg-white p-6 rounded-xl card-shadow flex flex-col items-start hover:shadow-xl transition duration-300">
+                  <h3 class="text-xl font-bold text-nih-dark mb-3">Climate Fundamentals</h3>
+                  <ul class="text-gray-600 space-y-2 text-sm list-disc pl-5">
+                     <li>Climate change impacts on water resources</li>
+                     <li><b>CMIP6, GCMs, RCMs,</b> and <b>CORDEX</b> frameworks</li>
+                     <li>Reanalysis Data</li>
+                  </ul>
+               </div>
+               <!-- Card 2: Hands-on Data Tools -->
+               <div class="bg-white p-6 rounded-xl card-shadow flex flex-col items-start hover:shadow-xl transition duration-300">
+                  <h3 class="text-xl font-bold text-nih-dark mb-3">Hands-on Tutorial</h3>
+                  <ul class="text-gray-600 space-y-2 text-sm list-disc pl-5">
+                     <li>Pre-processing data with <b>CDO</b></li>
+                     <li>Visualize climate data using <b>GrADS</b></li>
+                     <li>Data handling with <b>NumPy & Pandas</b></li>
+                     <li>NetCDF Data processing with <b>Xarray</b></li>
+                  </ul>
+               </div>
+               <!-- Card 3: Downscaling & ML -->
+               <div class="bg-white p-6 rounded-xl card-shadow flex flex-col items-start hover:shadow-xl transition duration-300">
+                  <h3 class="text-xl font-bold text-nih-dark mb-3">Advanced Topics</h3>
+                  <ul class="text-gray-600 space-y-2 text-sm list-disc pl-5">
+                     <li>Dynamical & Statistical Downscaling methods</li>
+                     <li><b>AI & ML</b> in Climate Science applications</li>
+                     <li>Climate Services of <b>IMD</b></li>
+                  </ul>
+               </div>
+               <!-- Card 4: Practical Application -->
+               <div class="bg-white p-6 rounded-xl card-shadow flex flex-col items-start hover:shadow-xl transition duration-300">
+                  <h3 class="text-xl font-bold text-nih-dark mb-3">Exposure & Certification</h3>
+                  <ul class="text-gray-600 space-y-2 text-sm list-disc pl-5">
+                     <li>Advanced tools</li>
+                     <li>Official Certificate of Participation</li>
+                     <li>Complimentary <b>Field Visit</b></li>
+                  </ul>
+               </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Full Schedule -->
-    <section id="schedule" class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-extrabold text-nih-dark mb-8 text-center">Tentative 5-Day Schedule</h2>
-
-        <div class="overflow-x-auto rounded-xl shadow-md">
-          <table class="w-full text-sm text-gray-700 text-center">
-
-            <thead class="bg-gray-100 text-gray-600 uppercase text-xs">
-              <tr class="text-base font-semibold">
-                <th class="px-3 py-2 w-2/12">Time</th>
-                <th class="px-3 py-2 w-7/12">Topic</th>
-                <th class="px-3 py-2 w-3/12">Expert</th>
-              </tr>
-            </thead>
-
-            <tbody class="divide-y">
-
-              <!-- DAY 1 -->
-              <tr class="bg-nih-light/60 font-bold text-nih-dark">
-                <td colspan="3" class="py-2">DAY 1 — Climate Change & Data Pre-processing</td>
-              </tr>
-              <tr>
-                <td>09:30–10:30</td>
-                <td>Registration, Inauguration & Overview</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td>11:00–13:00</td>
-                <td>CMIP6, GCM, RCM, CORDEX Concepts</td>
-                <td>IITM</td>
-              </tr>
-              <tr>
-                <td>14:00–17:00</td>
-                <td>Pre-processing Climate Data in <b>CDO</b> (Hands-on)</td>
-                <td>KS / DSB</td>
-              </tr>
-
-              <!-- DAY 2 -->
-              <tr class="bg-nih-light/60 font-bold text-nih-dark">
-                <td colspan="3" class="py-2">DAY 2 — Reanalysis, Downscaling & Visualization</td>
-              </tr>
-              <tr><td>09:30–10:30</td><td>Reanalysis Data (Intro & Uses)</td><td>NCMWRF</td></tr>
-              <tr><td>11:00–13:00</td><td>Dynamical Downscaling (Concepts & Applications)</td><td>KS</td></tr>
-              <tr><td>14:00–17:00</td><td><b>GrADS</b> for Climate Visualization</td><td>AR / KS</td></tr>
-
-              <!-- DAY 3 -->
-              <tr class="bg-nih-light/60 font-bold text-nih-dark">
-                <td colspan="3" class="py-2">DAY 3 — Statistical Downscaling & Python Basics</td>
-              </tr>
-              <tr><td>09:15–10:15</td><td>Statistical Downscaling (Methods & Applications)</td><td>SG</td></tr>
-              <tr><td>10:30–13:00</td><td>Python Basics (Syntax, Loops, Functions)</td><td>DSB</td></tr>
-              <tr><td>14:00–17:00</td><td>Python Data Handling (<b>NumPy, Pandas</b>)</td><td>NP</td></tr>
-
-              <!-- DAY 4 -->
-              <tr class="bg-nih-light/60 font-bold text-nih-dark">
-                <td colspan="3" class="py-2">DAY 4 — IMD Services & Advanced Python</td>
-              </tr>
-              <tr><td>09:30–11:00</td><td>Climate Data Services of <b>IMD</b></td><td>IMD</td></tr>
-              <tr><td>11:15–13:00</td><td><b>Xarray</b> for NetCDF (Hands-on)</td><td>VS</td></tr>
-              <tr><td>14:00–17:00</td><td>Python Visualization (<b>Matplotlib</b>)</td><td>DSB / KS</td></tr>
-
-              <!-- DAY 5 -->
-              <tr class="bg-nih-light/60 font-bold text-nih-dark">
-                <td colspan="3" class="py-2">DAY 5 — AI/ML, DIY & Valedictory</td>
-              </tr>
-              <tr><td>09:30–13:00</td><td>AI & ML in Climate Science (Part 1 & 2)</td><td>NA / IITM</td></tr>
-              <tr><td>14:00–16:00</td><td><b>DIY Session</b> — Build Your Workflow</td><td>KS / DSB</td></tr>
-              <tr><td>16:15–17:15</td><td>Project Presentations & Valedictory</td><td>—</td></tr>
-
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Registration/Contact Section -->
-    <section id="register" class="py-16 bg-nih-dark text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+         </div>
+      </section>
+      <!-- Course Schedule -->
+      <section id="schedule" class="py-16 bg-slate-50 font-sans">
+         <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-10">
+               <h2 class="text-4xl font-black text-[#002b5c] uppercase tracking-tight">Training Itinerary</h2>
+            </div>
+            <div class="space-y-8">
+               <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                  <div class="bg-[#002b5c] px-6 py-4 flex justify-between items-center text-white">
+                     <h3 class="font-bold text-xl uppercase tracking-wide">Day 1 — 02 Feb, Monday</h3>
+                  </div>
+                  <div class="divide-y divide-gray-100">
+                     <div class="flex items-center gap-6 px-6 py-3 hover:bg-gray-50 transition">
+                        <span class="text-base font-bold text-gray-400 w-32 shrink-0 tabular-nums">09:30 – 10:00</span>
+                        <div class="text-base text-gray-900 font-bold">Registration</div>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-3 hover:bg-gray-50 transition">
+                        <span class="text-base font-bold text-gray-400 w-32 shrink-0 tabular-nums">10:00 – 10:30</span>
+                        <div class="text-base text-gray-900 font-bold">Inauguration and Overview</div>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-2 bg-orange-50 border-l-4 border-orange-400">
+                        <span class="text-xs font-black text-orange-700 w-32 shrink-0 uppercase tracking-widest">10:30 – 11:00</span>
+                        <div class="text-sm font-black text-orange-800 italic uppercase">High Tea Break</div>
+                     </div>
+                     <div class="flex items-start gap-6 px-6 py-4 group">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums mt-0.5">11:00 – 12:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">Global Climate Models and CMIP6</h4>
+                           <p class="text-xs text-gray-500 font-medium">Frameworks for Future Climate Scenarios</p>
+                        </div>
+                        <span class="text-[10px] font-black text-white bg-[#002b5c] px-2 py-1 rounded shadow-sm">STP</span>
+                     </div>
+                     <div class="flex items-start gap-6 px-6 py-4 group">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums mt-0.5">12:00 – 13:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">Regional Climate Modeling with CORDEX</h4>
+                           <p class="text-xs text-gray-500 font-medium">Downscaling and Applications</p>
+                        </div>
+                        <span class="text-[10px] font-black text-white bg-[#002b5c] px-2 py-1 rounded shadow-sm">STP</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-2 bg-green-50 border-l-4 border-green-500">
+                        <span class="text-xs font-black text-green-700 w-32 shrink-0 uppercase tracking-widest">13:00 – 14:00</span>
+                        <div class="text-sm font-black text-green-800 italic uppercase">Lunch Break</div>
+                     </div>
+                     <div class="flex items-start gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums mt-0.5">14:00 – 15:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">Reanalysis Data</h4>
+                           <p class="text-xs text-gray-500 font-medium">Introduction and Conceptual Framework</p>
+                        </div>
+                        <span class="text-[10px] font-black text-white bg-[#002b5c] px-2 py-1 rounded shadow-sm">NK</span>
+                     </div>
+                     <div class="flex items-start gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums mt-0.5">15:00 – 16:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">From Global Reanalysis to IMDAA</h4>
+                           <p class="text-xs text-gray-500 font-medium">Concepts, Modeling Frameworks, and Indian Applications</p>
+                        </div>
+                        <span class="text-[10px] font-black text-white bg-[#002b5c] px-2 py-1 rounded shadow-sm">NK</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-2 bg-orange-50 border-l-4 border-orange-400">
+                        <span class="text-xs font-black text-orange-700 w-32 shrink-0 uppercase tracking-widest">16:00 – 16:30</span>
+                        <div class="text-sm font-black text-orange-800 italic uppercase">Tea Break</div>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-4 bg-blue-50/50">
+                        <span class="text-lg font-bold text-blue-700 w-32 shrink-0 tabular-nums">16:30 – 17:30</span>
+                        <div class="flex-grow text-lg font-bold text-gray-900">Pre-processing Climate Data in CDO and GrADS – Part 1</div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">KS / DSB</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                  <div class="bg-[#002b5c] px-6 py-4 flex justify-between items-center text-white">
+                     <h3 class="font-bold text-xl uppercase tracking-wide">Day 2 — 03 Feb, Tuesday</h3>
+                  </div>
+                  <div class="divide-y divide-gray-100">
+                     <div class="flex items-center gap-6 px-6 py-4 bg-blue-50/50">
+                        <span class="text-lg font-bold text-blue-700 w-32 shrink-0 tabular-nums">09:30 – 11:00</span>
+                        <div class="text-lg font-bold text-gray-900">Pre-processing Climate Data in CDO and GrADS – Part 2</div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">KS / DSB</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-2 bg-orange-50 border-l-4 border-orange-400">
+                        <span class="text-xs font-black text-orange-700 w-32 shrink-0 uppercase tracking-widest">11:00 – 11:15</span>
+                        <div class="text-sm font-bold text-orange-800 italic uppercase">Tea Break</div>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums">11:15 – 13:00</span>
+                        <div class="flex-grow text-lg font-bold text-gray-900">Climate Services of IMD</div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">SBR</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-2 bg-green-50 border-l-4 border-green-500">
+                        <span class="text-xs font-black text-green-700 w-32 shrink-0 uppercase tracking-widest">13:00 – 14:00</span>
+                        <div class="text-sm font-black text-green-800 italic uppercase">Lunch Break</div>
+                     </div>
+                     <div class="flex items-start gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums mt-0.5">14:00 – 17:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">Rainfall Persistence Analysis</h4>
+                           <p class="text-xs text-gray-500 font-medium">Understanding Trends Using Wet and Dry Spell Analysis</p>
+                        </div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">AR</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                  <div class="bg-[#002b5c] px-6 py-4 flex justify-between items-center text-white">
+                     <h3 class="font-bold text-xl uppercase tracking-wide">Day 3 — 04 Feb, Wednesday</h3>
+                  </div>
+                  <div class="divide-y divide-gray-100">
+                     <div class="flex items-center gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums">09:30 – 11:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">Statistical Downscaling Concepts</h4>
+                           <p class="text-xs text-gray-500 font-medium">Concepts, Methods, and Applications</p>
+                        </div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">SG</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-2 bg-orange-50 border-l-4 border-orange-400">
+                        <span class="text-xs font-black text-orange-700 w-32 shrink-0 uppercase tracking-widest">11:00 – 11:15</span>
+                        <div class="text-sm font-bold text-orange-800 italic uppercase">Tea Break</div>
+                     </div>
+                     <div class="flex items-start gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums mt-0.5">11:15 – 13:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">Bias Correction of GCM and RCM Outputs</h4>
+                           <p class="text-xs text-gray-500 font-medium">Making Climate Models Fit for Impact Studies</p>
+                        </div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">KS</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-2 bg-green-50 border-l-4 border-green-500">
+                        <span class="text-xs font-black text-green-700 w-32 shrink-0 uppercase tracking-widest">13:00 – 14:00</span>
+                        <div class="text-sm font-black text-green-800 italic uppercase">Lunch Break</div>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-4 bg-blue-50/50">
+                        <span class="text-lg font-bold text-blue-700 w-32 shrink-0 tabular-nums">14:00 – 15:30</span>
+                        <div class="flex-grow text-lg font-bold text-gray-900">Basics of Python (Syntax, Loops, Functions)</div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">DSB</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-4 bg-blue-50/50">
+                        <span class="text-lg font-bold text-blue-700 w-32 shrink-0 tabular-nums">15:30 – 17:00</span>
+                        <div class="flex-grow text-lg font-bold text-gray-900">Python Data Handling (NumPy, Pandas)</div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">NP</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                  <div class="bg-[#002b5c] px-6 py-4 flex justify-between items-center text-white">
+                     <h3 class="font-bold text-xl uppercase tracking-wide">Day 4 — 04 Feb, Wednesday</h3>
+                  </div>
+                  <div class="divide-y divide-gray-100">
+                     <div class="flex items-center gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums">09:30 – 11:00</span>
+                        <div class="flex-grow text-lg font-bold text-gray-900">Data Visualization in Python (Matplotlib)</div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">DSB/KS</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-2 bg-orange-50 border-l-4 border-orange-400">
+                        <span class="text-xs font-black text-orange-700 w-32 shrink-0 uppercase tracking-widest">11:00 – 11:15</span>
+                        <div class="text-sm font-bold text-orange-800 italic uppercase">Tea Break</div>
+                     </div>
+                     <div class="flex items-start gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums mt-0.5">11:15 – 13:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">Xarray for NetCDF</h4>
+                           <p class="text-xs text-gray-500 font-medium">Climate Data in Python</p>
+                        </div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">VS</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-2 bg-green-50 border-l-4 border-green-500">
+                        <span class="text-xs font-black text-green-700 w-32 shrink-0 uppercase tracking-widest">13:00 – 14:00</span>
+                        <div class="text-sm font-black text-green-800 italic uppercase">Lunch Break</div>
+                     </div>
+                     <div class="flex items-start gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums mt-0.5">11:15 – 13:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">Field Trip</h4>
+                           <p class="text-xs text-gray-500 font-medium">Guided Site Exposure & Practical Observations</p>
+                        </div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">DSB/KS</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                  <div class="bg-[#002b5c] px-6 py-4 flex justify-between items-center text-white">
+                     <h3 class="font-bold text-xl uppercase tracking-wide">Day 5 — 06 Feb, Friday</h3>
+                  </div>
+                  <div class="divide-y divide-gray-100">
+                     <div class="flex items-center gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums">09:30 – 13:00</span>
+                        <div class="flex-grow text-lg font-bold text-gray-900">AI & ML in Climate Science (Parts 1 & 2)</div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">SK</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-2 bg-green-50 border-l-4 border-green-500">
+                        <span class="text-xs font-black text-green-700 w-32 shrink-0 uppercase tracking-widest">13:00 – 14:00</span>
+                        <div class="text-sm font-black text-green-800 italic uppercase">Lunch Break</div>
+                     </div>
+                     <div class="flex items-start gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums mt-0.5">14:00 – 15:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">Decoding Drought Charactyeristics using Climate Data</h4>
+                        </div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">RP</span>
+                     </div>
+                     <div class="flex items-start gap-6 px-6 py-4">
+                        <span class="text-lg font-bold text-[#002b5c] w-32 shrink-0 tabular-nums mt-0.5">15:00 – 16:00</span>
+                        <div class="flex-grow">
+                           <h4 class="text-lg font-bold text-gray-900 leading-snug">NIH Dhara in Climate-Informed Water Resources Management</h4>
+                        </div>
+                        <span class="text-xs font-bold text-blue-800 bg-blue-100 px-3 py-1 rounded">SJ</span>
+                     </div>
+                     <div class="flex items-center gap-6 px-6 py-4 bg-gray-900 text-white">
+                        <span class="text-base font-bold w-32 shrink-0 opacity-50 tabular-nums">16:00 – 16:30</span>
+                        <div class="text-lg font-black uppercase tracking-tight">Valedictory Session</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="mt-12 p-8 bg-[#002b5c] rounded-[2rem] text-white shadow-xl relative overflow-hidden">
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
+                  <div>
+                     <h4 class="text-blue-300 font-black uppercase text-xs mb-6 flex items-center gap-2 tracking-[0.2em]">
+                        <span class="w-2 h-2 bg-blue-300 rounded-full animate-pulse"></span> NIH Roorkee Experts
+                     </h4>
+                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 text-xs font-bold opacity-90">
+                        <div class="flex gap-2"><span>AR: Dr. Ashwini Ranade, Scientist 'E' </span></div>
+                        <div class="flex gap-2"><span>SG: Dr. Sunil Gurrapu, Scientist 'D' </span></div>
+                        <div class="flex gap-2"><span>VS: Dr. Vishal Singh, Scientist 'D' </span></div>
+                        <div class="flex gap-2"><span>DSB: Dr. DS Bisht, Scientist 'C' </span></div>
+                        <div class="flex gap-2"><span>NP: Dr. Nitesh Patidar, Scientist 'C' </span></div>
+                        <div class="flex gap-2"><span>KS: Dr. Kuldeep Sharma, Scientist 'C' </span></div>
+                        <div class="flex gap-2"><span>SJ: Sh. Sukant Jain, Scientist 'C' </span></div>
+                        <div class="flex gap-2"><span>RP: Sh. Ruchir Patidar, Scientist 'B' </span></div>
+                     </div>
+                  </div>
+                  <div class="border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-10">
+                     <h4 class="text-green-300 font-black uppercase text-xs mb-6 flex items-center gap-2 tracking-[0.2em]">
+                        <span class="w-2 h-2 bg-green-300 rounded-full"></span> External Experts
+                     </h4>
+                     <div class="space-y-3 text-xs font-bold opacity-90">
+                        <div class="flex gap-2"><span>STP: Dr. Sabin TP (Scientist 'F', IITM)</span></div>
+                        <div class="flex gap-2"><span>SK: Dr. Siddartha Kumar (Scientist 'F', IITM)</span></div>
+                        <div class="flex gap-2"><span>SBR: Dr. Satyaban B Ratna (Scientist 'E', IMD)</span></div>
+                        <div class="flex gap-2"><span>NK: Dr. Niranjan Kumar (Scientist 'E', NCMRWF)</span></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Registration/Contact Section -->
+      <section id="register" class="py-16 bg-nih-dark text-white">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl font-extrabold mb-4">Ready to Apply?</h2>
             <p class="text-xl mb-8 max-w-3xl mx-auto">
-                The training is <b>FREE of cost</b> and includes complimentary boarding and lodging. Seats are strictly limited to <b>25 participants</b>.
+               The training is <b>FREE of cost</b> and includes complimentary boarding and lodging. Seats are strictly limited to <b>25 participants</b>.
             </p>
-
             <h3 class="text-2xl font-bold mb-3">Eligibility</h3>
             <p class="mb-8 text-gray-300">
-                Open to PhD Scholars, Scientists, Academicians of Government Universities, Professionals working in NGOs, and Engineers from Central/State Government.
+               Open to PhD Scholars, Scientists, Academicians of Government Universities, Professionals working in NGOs, and Engineers from Central/State Government.
             </p>
-
             <a href="https://forms.office.com/r/mLke25DUVv" target="_blank" class="inline-flex items-center justify-center px-12 py-4 border border-transparent text-base font-bold rounded-lg text-nih-dark bg-white hover:bg-gray-200 md:text-xl shadow-2xl transition duration-300 transform hover:scale-105">
-                Go to Registration Link & Apply
-                <!-- Icon: External Link -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 ml-2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+               Go to Registration Link & Apply
+               <!-- Icon: External Link -->
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 ml-2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+               </svg>
             </a>
-        </div>
-        <br>
-
-        <div style="background-color:#ffe6e6; border:2px solid red; padding:10px; font-weight:bold; color:red; text-align:center;">
-            It is mandatory to send the No Objection Certificate (NOC) in the prescribed format via email at the time of registration. Applications without the NOC will be rejected.
-        </div>
-
-        <div style="text-align:center; margin-top:15px;">
-          <a href="https://1drv.ms/b/c/25347ac4eb206990/EcSDppa7Pg9Gk_hvwLR5LnoB7L3YGLgwawqYL-rpdNn9Jg?e=EXffAf" target="_blank" download
-             style="background-color:#007bff; color:white; padding:10px 20px; 
-                    border-radius:6px; text-decoration:none; font-weight:bold;">
-             Download NOC Certificate Format
-          </a>
-        </div>
-
-
-
-    </section>
-
-<!-- Footer & Contact Information -->
-<footer class="bg-gray-900 text-gray-200 pt-12 pb-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-
-    <!-- Organized / Sponsored Strip -->
-    <section class="bg-gray-800/70 border border-gray-700 rounded-xl px-6 py-6 text-center">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <!-- Organized By -->
-        <div>
-          <h3 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-2">
-            Organized by
-          </h3>
-          <!-- NIH Logo -->
-         <div class="flex justify-center">
-          <img src="assets/NIH_Logo.jpg" alt="C4S NIH Logo" class="w-28 mt-2">
          </div>
-          <p class="text-s leading-snug text-gray-100">
-            <!-- Centre for Cryosphere and Climate Change Studies (C4S)<br> -->
-            National Institute of Hydrology (NIH), Roorkee
-          </p>
-        </div>
-
-        <!-- Sponsored By -->
-        <div>
-          <h3 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-2">
-            Sponsored by
-          </h3>
-          <!-- NWM Logo -->
-        <div class="flex justify-center">
-          <img src="assets/NWM_Logo.jpg" alt="C4S NIH Logo" class="w-28 mt-2">
-        </div>
-          <p class="text-s leading-snug text-gray-100">
-            National Water Mission (NWM), New Delhi
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Comes under -->
-      <p class="text-s text-gray-400 mt-4">
-        Department of Water Resources, River Development &amp; Ganga Rejuvenation<br>
-        Ministry of Jal Shakti, Government of India
-      </p>
-    </section>
-
-    <!-- Main Footer Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-      <!-- Patron & Convener -->
-      <div>
-        <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-3">
-          Patron
-        </h4>
-        <p class="text-sm text-gray-200 leading-relaxed">
-          <span class="font-semibold">Dr. Y.R.S. Rao</span><br>
-          Director, National Institute of Hydrology
-        </p>
-
-        <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mt-6 mb-3">
-          Convener
-        </h4>
-        <p class="text-sm text-gray-200 leading-relaxed">
-          <span class="font-semibold">Dr. Surjeet Singh</span><br>
-          Scientist 'G' &amp; Head, C4S<br>
-          National Institute of Hydrology
-        </p>
-      </div>
-
-      <!-- Training Coordinators -->
-      <div>
-        <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-3">
-          Training Coordinators
-        </h4>
-
-        <div class="space-y-5 text-sm text-gray-200">
-          <p class="leading-relaxed">
-            <span class="font-semibold">Dr. Kuldeep Sharma</span><br>
-            Scientist 'C', C4S, National Institute of Hydrology<br>
-            <span class="text-gray-400">Email:</span> kuldeep.nihr@gov.in<br>
-            <span class="text-gray-400">Phone:</span> 01332&nbsp;249251
-          </p>
-
-          <p class="leading-relaxed">
-            <span class="font-semibold">Dr. Deepak Singh Bisht</span><br>
-            Scientist 'C', C4S, National Institute of Hydrology<br>
-            <span class="text-gray-400">Email:</span> dsbisht.nihr@gov.in<br>
-            <span class="text-gray-400">Phone:</span> 01332&nbsp;249234
-          </p>
-        </div>
-      </div>
-
-      <!-- Quick Links -->
-      <div>
-        <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-3">
-          Quick Links
-        </h4>
-        <ul class="space-y-2 text-sm">
-          <li>
-            <a href="#about" class="text-gray-300 hover:text-blue-400 hover:underline transition">
-              About NIH
+         <br>
+         <div style="background-color:#ffe6e6; border:2px solid red; padding:10px; font-weight:bold; color:red; text-align:center;">
+            It is mandatory to send the No Objection Certificate (NOC) in the prescribed format via email at the time of registration. Applications without the NOC will be rejected.
+         </div>
+         <div style="text-align:center; margin-top:15px;">
+            <a href="https://1drv.ms/b/c/25347ac4eb206990/EcSDppa7Pg9Gk_hvwLR5LnoB7L3YGLgwawqYL-rpdNn9Jg?e=EXffAf" target="_blank" download
+               style="background-color:#007bff; color:white; padding:10px 20px; 
+               border-radius:6px; text-decoration:none; font-weight:bold;">
+            Download NOC Certificate Format
             </a>
-          </li>
-          <li>
-            <a href="#topics" class="text-gray-300 hover:text-blue-400 hover:underline transition">
-              Key Topics
-            </a>
-          </li>
-          <li>
-            <a href="#schedule" class="text-gray-300 hover:text-blue-400 hover:underline transition">
-              Full Schedule
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="pt-6 border-t border-gray-800 text-center">
-      <p class="text-xs text-gray-500">
-        &copy; 2026 National Institute of Hydrology, Roorkee. All rights reserved.
-      </p>
-    </div>
-
-  </div>
-
-    <!-- Visitor Counter -->
-
-  <div style="margin-top:10px;">
-    <img 
-      img src="https://hitwebcounter.com/counter/counter.php?page=21458063&style=0024&nbdigits=5&type=page&initCount=0" border="0"
-      alt="visitor counter" 
-      style="display:block; margin:0 auto;"
-    >
-  </div>
-    
-</footer>
-
-</body>
+         </div>
+      </section>
+      <!-- Footer & Contact Information -->
+      <footer class="bg-gray-900 text-gray-200 pt-12 pb-8">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <!-- Organized / Sponsored Strip -->
+            <section class="bg-gray-800/70 border border-gray-700 rounded-xl px-6 py-6 text-center">
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- Organized By -->
+                  <div>
+                     <h3 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-2">
+                        Organized by
+                     </h3>
+                     <!-- NIH Logo -->
+                     <div class="flex justify-center">
+                        <img src="assets/NIH_Logo.jpg" alt="C4S NIH Logo" class="w-28 mt-2">
+                     </div>
+                     <p class="text-s leading-snug text-gray-100">
+                        <!-- Centre for Cryosphere and Climate Change Studies (C4S)<br> -->
+                        National Institute of Hydrology (NIH), Roorkee
+                     </p>
+                  </div>
+                  <!-- Sponsored By -->
+                  <div>
+                     <h3 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-2">
+                        Sponsored by
+                     </h3>
+                     <!-- NWM Logo -->
+                     <div class="flex justify-center">
+                        <img src="assets/NWM_Logo.jpg" alt="C4S NIH Logo" class="w-28 mt-2">
+                     </div>
+                     <p class="text-s leading-snug text-gray-100">
+                        National Water Mission (NWM), New Delhi
+                     </p>
+                  </div>
+               </div>
+               <!-- Comes under -->
+               <p class="text-s text-gray-400 mt-4">
+                  Department of Water Resources, River Development &amp; Ganga Rejuvenation<br>
+                  Ministry of Jal Shakti, Government of India
+               </p>
+            </section>
+            <!-- Main Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+               <!-- Patron & Convener -->
+               <div>
+                  <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-3">
+                     Patron
+                  </h4>
+                  <p class="text-sm text-gray-200 leading-relaxed">
+                     <span class="font-semibold">Dr. Y.R.S. Rao</span><br>
+                     Director, National Institute of Hydrology
+                  </p>
+                  <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mt-6 mb-3">
+                     Convener
+                  </h4>
+                  <p class="text-sm text-gray-200 leading-relaxed">
+                     <span class="font-semibold">Dr. Surjeet Singh</span><br>
+                     Scientist 'G' &amp; Head, C4S<br>
+                     National Institute of Hydrology
+                  </p>
+               </div>
+               <!-- Training Coordinators -->
+               <div>
+                  <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-3">
+                     Training Coordinators
+                  </h4>
+                  <div class="space-y-5 text-sm text-gray-200">
+                     <p class="leading-relaxed">
+                        <span class="font-semibold">Dr. Kuldeep Sharma</span><br>
+                        Scientist 'C', C4S, National Institute of Hydrology<br>
+                        <span class="text-gray-400">Email:</span> kuldeep.nihr@gov.in<br>
+                        <span class="text-gray-400">Phone:</span> 01332&nbsp;249251
+                     </p>
+                     <p class="leading-relaxed">
+                        <span class="font-semibold">Dr. Deepak Singh Bisht</span><br>
+                        Scientist 'C', C4S, National Institute of Hydrology<br>
+                        <span class="text-gray-400">Email:</span> dsbisht.nihr@gov.in<br>
+                        <span class="text-gray-400">Phone:</span> 01332&nbsp;249234
+                     </p>
+                  </div>
+               </div>
+               <!-- Quick Links -->
+               <div>
+                  <h4 class="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-3">
+                     Quick Links
+                  </h4>
+                  <ul class="space-y-2 text-sm">
+                     <li>
+                        <a href="#about" class="text-gray-300 hover:text-blue-400 hover:underline transition">
+                        About NIH
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#topics" class="text-gray-300 hover:text-blue-400 hover:underline transition">
+                        Key Topics
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#schedule" class="text-gray-300 hover:text-blue-400 hover:underline transition">
+                        Full Schedule
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!-- Bottom Bar -->
+            <div class="pt-6 border-t border-gray-800 text-center">
+               <p class="text-xs text-gray-500">
+                  &copy; 2026 National Institute of Hydrology, Roorkee. All rights reserved.
+               </p>
+            </div>
+         </div>
+         <!-- Visitor Counter -->
+         <div style="margin-top:10px;">
+            <img 
+               img src="https://hitwebcounter.com/counter/counter.php?page=21458063&style=0024&nbdigits=5&type=page&initCount=0" border="0"
+               alt="visitor counter" 
+               style="display:block; margin:0 auto;"
+               >
+         </div>
+      </footer>
+   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
